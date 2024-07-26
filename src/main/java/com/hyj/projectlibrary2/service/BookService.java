@@ -1,35 +1,44 @@
 package com.hyj.projectlibrary2.service;
 
-import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.hyj.projectlibrary2.bean.Book;
 import com.hyj.projectlibrary2.dao.BookDao;
 import org.springframework.stereotype.Service;
 import org.springframework.beans.factory.annotation.Autowired;
 
-import java.util.List;
+import java.util.ArrayList;
+
 
 @Service
-public class BookService extends ServiceImpl<BookDao, Book> {
+public class BookService {
     @Autowired
     private BookDao bookDao;
 
-    public List<Book> getAllBooks() {
+    public ArrayList<Book> queryBook(String searchWord) {
+        return bookDao.queryBook(searchWord);
+    }
+
+    public ArrayList<Book> getAllBooks() {
         return bookDao.getAllBooks();
     }
 
-    public Book getBookById(Long id) {
-        return bookDao.getBookById(id);
+    public boolean matchBook(String searchWord) {
+        return bookDao.matchBook(searchWord) > 0;
     }
 
-    public void addBook(Book book) {
-        bookDao.addBook(book);
+    public boolean addBook(Book book) {
+        return bookDao.addBook(book) > 0;
     }
 
-    public void updateBook(Book book) {
-        bookDao.updateBook(book);
+    public Book getBook(Long bookId) {
+        return bookDao.getBook(bookId);
     }
 
-    public void deleteBook(Long id) {
-        bookDao.deleteBook(id);
+    public boolean editBook(Book book) {
+        return bookDao.editBook(book) > 0;
     }
+
+    public boolean deleteBook(Long bookId) {
+        return bookDao.deleteBook(bookId) > 0;
+    }
+
 }
