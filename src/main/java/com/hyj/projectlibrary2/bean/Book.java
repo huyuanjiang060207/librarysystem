@@ -11,15 +11,15 @@ import java.io.Serializable;
 @TableName("books")
 public class Book implements Serializable {
     @TableId(type = IdType.AUTO)
-    private Long id;
+    private Long bookid;
     private String title;
     private String author;
 
     public long getBookId() {
-        return id;
+        return bookid;
     }
-    public void setBookId(long book_id) {
-        this.id = id;
+    public void setBookId(long bookid) {
+        this.bookid = bookid;
     }
     public String getTitle() {
         return title;
@@ -36,7 +36,7 @@ public class Book implements Serializable {
     @Override
     public String toString(){
         return "Book{" +
-                "book_id=" + id +
+                "book_id=" + bookid +
                 ", name='" + title + '\'' +
                 ", author='" + author + '\'' +
                 '}';

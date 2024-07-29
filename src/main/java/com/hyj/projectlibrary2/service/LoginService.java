@@ -1,8 +1,8 @@
 package com.hyj.projectlibrary2.service;
 
-import com.hyj.projectlibrary2.bean.Reader;
+import com.hyj.projectlibrary2.bean.ReaderCard;
 import com.hyj.projectlibrary2.dao.AdminDao;
-import com.hyj.projectlibrary2.dao.ReaderDao;
+import com.hyj.projectlibrary2.dao.ReaderCardDao;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,13 +10,13 @@ import org.springframework.stereotype.Service;
 public class LoginService {
 
     @Autowired
-    private ReaderDao readerDao;
+    private ReaderCardDao readerCardDao;
     @Autowired
     private AdminDao adminDao;
 
     //检测数据库中是否含与输入对应的账户信息
     public boolean hasMatchReader(long readerId,String password){
-        return  readerDao.getIdMatchCount(readerId, password)>0;
+        return  readerCardDao.getIdMatchCount(readerId, password)>0;
     }
 
     //根据id获取账号名
@@ -25,8 +25,8 @@ public class LoginService {
     }
 
     //根据id获取读者信息
-    public Reader findReaderCardByReaderId(long readerId){
-        return readerDao.findReaderByReaderId(readerId);
+    public ReaderCard findReaderCardByReaderId(long readerId){
+        return readerCardDao.findReaderByReaderId(readerId);
     }
 
     //是否是管理员
@@ -46,12 +46,12 @@ public class LoginService {
 
     //用户修改密码是否成功
     public boolean readerRePassword(long readerId, String newPassword) {
-        return readerDao.resetPassword(readerId, newPassword) > 0;
+        return readerCardDao.resetPassword(readerId, newPassword) > 0;
     }
 
     //根据用户返回用户密码
     public String getReaderPassword(long readerId) {
-        return readerDao.getPassword(readerId);
+        return readerCardDao.getPassword(readerId);
     }
 
 

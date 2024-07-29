@@ -2,6 +2,7 @@ package com.hyj.projectlibrary2.dao;
 
 import com.hyj.projectlibrary2.bean.Lend;
 import jakarta.annotation.Resource;
+import org.apache.ibatis.annotations.Mapper;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 import java.util.ArrayList;

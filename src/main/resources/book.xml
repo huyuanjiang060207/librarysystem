@@ -1,6 +1,32 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<beans xmlns="http://www.springframework.org/schema/beans"
-       xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-       xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
-
-</beans>
+<mapper namespace="com.library.dao.BookDao">
+    <insert id="addBook" parameterType="com.hyj.projectlibrary2.bean.Book">
+        insert into book_info values
+        (null, #{name}, #{author}, #{publish}, #{ISBN},
+        #{introduction}, #{language}, #{price}, #{pub_date},
+        #{class_id}, #{number})
+    </insert>
+    <update id="editBook" parameterType="com.hyj.projectlibrary2y.bean.Book">
+        update book_info set name=#{name}, author=#{author},
+        publish=#{publish}, ISBN=#{ISBN}, introduction=#{introduction},
+        language=#{language}, price=#{price}, pub_date=#{pub_date},
+        class_id=#{class_id}, number=#{number} where bookid=#{bookid}
+    </update>
+    <select id="getAllBooks" resultType="com.hyj.projectlibrary2.bean.Book">
+        select * from book_info
+    </select>
+    <select id="queryBook" resultType="com.hyj.projectlibrary2.bean.Book" parameterType="String">
+        select * from book_info where name like #{search}
+        or author like #{search} or introduction like #{search}
+    </select>
+    <select id="matchBook" resultType="int" parameterType="String">
+        select count(*) from book_info where name like #{search}
+        or author like #{search} or introduction like #{search}
+    </select>
+    <select id="getBook" resultType="com.hyj.projectlibrary2.bean.Book" parameterType="long">
+        select * from book_info where bookid = #{bookid}
+    </select>
+    <delete id="deleteBook" parameterType="long">
+        delete from book_info where bookid = #{bookid}
+    </delete>
+</mapper>

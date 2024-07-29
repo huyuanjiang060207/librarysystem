@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="com.hyj.projectlibrary2.dao.ReaderCardDao">
+    <select id="getIdMatchCount" resultType="int">
+        select count(*) from reader_card where
+        readerid = #{readerid} and password = #{password}
+    </select>
+    <select id="findReaderByReaderId" resultType="com.hyj.projectlibrary2.bean.ReaderCard" parameterType="long">
+        select * from reader_card where readerid = #{readerid}
+    </select>
+    <update id="resetPassword">
+        update reader_card set password = #{password}
+        where readerid = #{readerid}
+    </update>
+    <select id="getPassword" resultType="String" parameterType="long">
+        select password from reader_card where readerid = #{readerid}
+    </select>
+    <insert id="addReaderCard">
+        insert into reader_card values
+        (#{readerid}, #{username}, #{password})
+    </insert>
+    <delete id="deleteReaderCard" parameterType="long">
+        delete from reader_card where readerid = #{readerid}
+    </delete>
+</mapper>

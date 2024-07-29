@@ -14,7 +14,7 @@ public class Lend implements Serializable {
         return readerid;
     }
 
-    public void setReaderId(long reader_id) {
+    public void setReaderId(long readeridd) {
         this.readerid = readerid;
     }
 
@@ -22,11 +22,11 @@ public class Lend implements Serializable {
         return bookid;
     }
 
-    public void setBookId(long book_id) {
-        this.bookid = bookid;
+    public void setBookId(long bookid) {
+        this.bookid = this.bookid;
     }
 
-    public void setSer_num(long ser_num) {
+    public void setSer_num(long num) {
         this.num = num;
     }
 
@@ -34,7 +34,7 @@ public class Lend implements Serializable {
         return backdate;
     }
 
-    public void setBackDate(Date back_date) {
+    public void setBackDate(Date backdate) {
         this.backdate = backdate;
     }
 
@@ -42,7 +42,7 @@ public class Lend implements Serializable {
         return lenddate;
     }
 
-    public void setLendDate(Date lend_date) {
+    public void setLendDate(Date lenddate) {
         this.lenddate = lenddate;
     }
 

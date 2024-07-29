@@ -1,0 +1,30 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<mapper namespace="com.hyj.projectlibrary2.dao.ReaderInfoDao">
+    <select id="getAllReaderInfo" resultType="com.hyj.projectlibrary2.bean.ReaderInfo">
+        select * from reader_info
+    </select>
+    <select id="findReaderInfoByReaderId" resultType="com.hyj.projectlibrary2.bean.ReaderInfo" parameterType="long">
+        select * from reader_info where readerid = #{readerid}
+    </select>
+    <delete id="deleteReaderInfo" parameterType="long">
+        delete from reader_info where readerid = #{readerid}
+    </delete>
+    <update id="editReaderInfo" parameterType="com.hyj.projectlibrary2.bean.ReaderInfo">
+        update reader_info set name = #{name} , sex = #{sex}, ,address = #{address} ,phone = #{phone}
+        where readerid = #{readerid}
+    </update>
+    <update id="editReaderCard" parameterType="com.hyj.projectlibrary2.bean.ReaderInfo">
+        update reader_card set username = #{name}
+        where readerid = #{readerid}
+    </update>
+    <insert id="addReaderInfo" parameterType="com.hyj.projectlibrary2.bean.ReaderInfo">
+        insert into reader_info values
+        (null, #{name},#{sex},#{birth},#{address},#{phone})
+    </insert>
+    <select id="getReaderId" resultType="long" parameterType="com.hyj.projectlibrary2.bean.ReaderInfo">
+        select readerid from reader_info where
+        name = #{name} and sex = #{sex} and
+        birth = #{birth} and address = #{address}
+        and phone = #{phone}
+    </select>
+</mapper>

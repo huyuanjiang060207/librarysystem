@@ -8,7 +8,7 @@ public class Admin {
         return adminid;
     }
 
-    public void setAdminId(long admin_id) {
+    public void setAdminId(long adminid) {
         this.adminid = adminid;
     }
 

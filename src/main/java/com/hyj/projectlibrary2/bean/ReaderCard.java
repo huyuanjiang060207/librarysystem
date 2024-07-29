@@ -1,8 +1,9 @@
 package com.hyj.projectlibrary2.bean;
 
 
+import java.io.Serializable;
 
-public class Reader {
+public class ReaderCard implements Serializable {
     private long readerid;
     private String name;
     private String sex;
@@ -13,7 +14,7 @@ public class Reader {
         return readerid;
     }
 
-    public void setReaderId(long reader_id) {
+    public void setReaderId(long readerid) {
         this.readerid = readerid;
     }
 
