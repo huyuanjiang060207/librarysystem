@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<mapper namespace="com.hyj.projectlibrary2.dao.ReaderInfoDao">
+<mapper namespace="com.hyj.projectlibrary2.mapper.ReaderInfoMapper">
     <select id="getAllReaderInfo" resultType="com.hyj.projectlibrary2.bean.ReaderInfo">
         select * from reader_info
     </select>

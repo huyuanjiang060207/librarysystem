@@ -1,4 +1,4 @@
-package com.hyj.projectlibrary2.dao;
+package com.hyj.projectlibrary2.mapper;
 
 import com.hyj.projectlibrary2.bean.ReaderInfo;
 import jakarta.annotation.Resource;
@@ -9,7 +9,7 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Repository
-public class ReaderInfoDao {
+public class ReaderInfoMapper {
 
     private final static String NAMESPACE = "com.library.dao.ReaderInfoDao.";
     @Resource

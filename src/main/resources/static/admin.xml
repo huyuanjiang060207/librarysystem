@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 
-<mapper namespace="com.hyj.projectlibrary2.dao.AdminDao">
+<mapper namespace="com.hyj.projectlibrary2.mapper.AdminMapper">
 <select id="getMatchCount" resultType="int">
     select count(*) from admin
     where adminid = #{adminid}

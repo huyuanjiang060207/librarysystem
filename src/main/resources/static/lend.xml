@@ -1,6 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.hyj.projectlibrary2.dao.LendDao">
+<mapper namespace="com.hyj.projectlibrary2.mapper.LendMapper">
 <update id="returnBookOne">
     update lend_list set backdate = sysdate() where bookid = #{bookid}
     and readerid = #{readerid} and back_date is null

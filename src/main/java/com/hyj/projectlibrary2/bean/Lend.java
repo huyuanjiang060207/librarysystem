@@ -1,52 +1,24 @@
 package com.hyj.projectlibrary2.bean;
 
+import lombok.AllArgsConstructor;
+import lombok.Data;
+import lombok.NoArgsConstructor;
+
 import java.io.Serializable;
 import java.util.Date;
 
-
+@Data
+@AllArgsConstructor
+@NoArgsConstructor
 public class Lend implements Serializable {
     private long num;
     private long bookid;
-    private long readerid;
+    private long userid;
+    private long lendid;
     private Date lenddate;
     private Date backdate;
-    public long getReaderId() {
-        return readerid;
-    }
-
-    public void setReaderId(long readeridd) {
-        this.readerid = readerid;
-    }
-
-    public long getBookId() {
-        return bookid;
-    }
-
-    public void setBookId(long bookid) {
-        this.bookid = this.bookid;
-    }
-
-    public void setSer_num(long num) {
-        this.num = num;
-    }
-
-    public Date getBackDate() {
-        return backdate;
-    }
-
-    public void setBackDate(Date backdate) {
-        this.backdate = backdate;
-    }
-
-    public Date getLendDate() {
-        return lenddate;
-    }
-
-    public void setLendDate(Date lenddate) {
-        this.lenddate = lenddate;
-    }
-
-    public long getSer_num() {
-        return num;
-    }
+    private User user;
+    private Book book;  //借阅书籍
+    private String dateOfBorrowing;  //借书日期
+    private String dateOfReturn;
 }

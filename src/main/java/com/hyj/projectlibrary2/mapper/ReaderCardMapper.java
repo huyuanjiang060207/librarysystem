@@ -1,18 +1,17 @@
-package com.hyj.projectlibrary2.dao;
+package com.hyj.projectlibrary2.mapper;
 
+import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.hyj.projectlibrary2.bean.ReaderCard;
 import com.hyj.projectlibrary2.bean.ReaderInfo;
 import jakarta.annotation.Resource;
 import org.mybatis.spring.SqlSessionTemplate;
 import org.springframework.stereotype.Repository;
 
-import java.util.ArrayList;
 import java.util.HashMap;
-import java.util.List;
 import java.util.Map;
 
 @Repository
-public class ReaderCardDao {
+public interface ReaderCardMapper extends BaseMapper{
 
     @Resource
     private SqlSessionTemplate sqlSessionTemplate;
